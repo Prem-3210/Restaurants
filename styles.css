@@ -1,0 +1,308 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #111;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: #e67e22;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Navigation */
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.8);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 1700;
+  font-size: 2.75rem;
+  user-select: none;
+  outline: none;
+  margin: 0; /* Remove any default margin */
+  padding-block: -60px;
+}
+
+.logo-img {
+  height: 100px; /* Adjust size */
+  margin: 0; /* Remove margin */
+}
+
+.logo span {
+  margin-left: 10px; /* Optional: adjust space between logo and text */
+}
+
+ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+ul.nav-links li a {
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+}
+
+ul.nav-links li a:focus {
+  outline: 2px solid #e67e22;
+  outline-offset: 2px;
+}
+
+
+
+/* Home Section */
+section.home-section {
+  flex: 1 0 auto;
+  height: 100vh;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUe_4la6zlv2NsaywPsmbCvtFRuBOCWIGxrA&s');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  color: white;
+}
+
+section.home-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+section.home-section > * {
+  position: relative;
+  z-index: 1;
+}
+section.home-section h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+section.home-section p {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+a.btn-primary {
+  background-color: #e67e22;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+a.btn-primary:hover,
+a.btn-primary:focus {
+  background-color: #cf711a;
+  outline: none;
+}
+
+/* Sections common styling */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #e67e22;
+  padding-bottom: 0.25rem;
+}
+
+/* Menu */
+.filter-buttons {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #222;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: #eee;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.filter-btn[aria-pressed="true"] {
+  background-color: #e67e22;
+  color: white;
+}
+.filter-btn:hover,
+.filter-btn:focus {
+  background-color: #cf711a;
+  outline: none;
+}
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.25rem;
+}
+
+#menu {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxxtMVHRKFIZ6gss1-5goxyMm66uwOOeoF1A&s');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+#menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+#menu > * {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-item {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.7);
+  color: white;
+  user-select: none;
+}
+
+.menu-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Reservation */
+form#reservation-form {
+  max-width: 450px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form#reservation-form input,
+form#reservation-form button {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #222;
+  color: #eee;
+  user-select: text;
+  transition: background-color 0.3s ease;
+}
+
+form#reservation-form input:focus {
+  outline: 2px solid #e67e22;
+  background-color: #333;
+}
+
+form#reservation-form button {
+  background-color: #e67e22;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Reservation Section Background */
+#reservation {
+  background-image: url('https://images.unsplash.com/photo-1564758866815-8ee0f0be0c94?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#reservation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+#reservation > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Location Section Background */
+#location {
+  background-image: url('https://images.unsplash.com/photo-1589307004300-f33d063b1e9d?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#location::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+#location > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #eee;
+}
+
+footer .social-icons {
+  margin-bottom: 1rem;
+}
+
+footer .social-icons a {
+  color: #e67e22;
+  margin: 0 10px;
+}
+
+footer .social-icons a:hover {
+  color: #cf711a;
+}
